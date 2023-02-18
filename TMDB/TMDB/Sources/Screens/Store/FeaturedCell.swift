@@ -89,10 +89,5 @@ class FeaturedCell: UICollectionViewCell {
         name.text = movie.title
         subtitle.text = movie.overview == "" ? "구매: \(movie.voteCount), 평점: \(movie.voteAverage)" : movie.overview
     }
-    
-    override func prepareForReuse() {
-        super.prepareForReuse()
-        poster.image = nil
-    }
 
 }

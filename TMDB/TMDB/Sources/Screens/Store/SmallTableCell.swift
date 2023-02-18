@@ -7,17 +7,17 @@
 
 import UIKit
 
-class ThreeTableCell: UICollectionViewCell {
+class SmallTableCell: UICollectionViewCell {
     
     // MARK: - Views
-
+    
     private let name = UILabel()
-    private let subtitle = UILabel()
-    private let poster = UIImageView()
-    private let buyButton = UIButton(type: .custom)
-    private var innerStackView = UIStackView()
-    private var outerStackView = UIStackView()
-        
+    private let imageView = UIImageView()
+    private var stackView = UIStackView()
+    private let emojis = [
+        "🤣", "🥃", "😎", "⌚️", "💯", "✅", "😀", "😂","🏈", "🚴‍♀️", "🎤", "🏔", "⛺️", "🏖", "🖥", "⌚️", "📱", "❤️", "☮️", "🦊", "🐝", "🐢", "🥃", "🍎", "🍑"
+    ]
+    
     // MARK: - LifeCycle
     
     override init(frame: CGRect) {
@@ -31,57 +31,35 @@ class ThreeTableCell: UICollectionViewCell {
         super.init(coder: coder)
     }
     
-    override func prepareForReuse() {
-        super.prepareForReuse()
-        poster.image = nil
-    }
-    
     // MARK: - Methods
-        
+    
     private func addAttributes() {
-        name.font = UIFont.preferredFont(forTextStyle: .headline)
-        name.textColor = .label
+        name.font = UIFont.preferredFont(forTextStyle: .title3)
+        name.textColor = .secondaryLabel
         
-        subtitle.font = UIFont.preferredFont(forTextStyle: .subheadline)
-        subtitle.textColor = .secondaryLabel
+        imageView.layer.cornerRadius = 5
+        imageView.clipsToBounds = true
+        imageView.contentMode = .scaleAspectFit
         
-        poster.layer.cornerRadius = 5
-        poster.contentMode = .scaleAspectFill
-        poster.backgroundColor = .lightGray
-        poster.clipsToBounds = true
-        
-        buyButton.setImage(UIImage(systemName: "icloud.and.arrow.down"), for: .normal)
-
-        innerStackView = UIStackView(arrangedSubviews: [name, subtitle])
-        innerStackView.axis = .vertical
-        
-        outerStackView = UIStackView(arrangedSubviews: [poster, innerStackView, buyButton])
-        outerStackView.translatesAutoresizingMaskIntoConstraints = false
-        outerStackView.alignment = .center
-        outerStackView.spacing = 10
+        stackView = UIStackView(arrangedSubviews: [name])
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.alignment = .center
+        stackView.spacing = 20
     }
     
     private func addSubviews() {
-        contentView.addSubview(outerStackView)
+        contentView.addSubview(stackView)
     }
     
     private func addConstraints() {
-        poster.setContentHuggingPriority(.defaultHigh, for: .horizontal)
-        buyButton.setContentHuggingPriority(.defaultHigh, for: .horizontal)
-        
         NSLayoutConstraint.activate([
-            poster.widthAnchor.constraint(equalToConstant: 80),
-            
-            outerStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            outerStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            outerStackView.topAnchor.constraint(equalTo: contentView.topAnchor),
-            outerStackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
+            stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            stackView.topAnchor.constraint(equalTo: contentView.topAnchor),
+            stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
         ])
     }
         
-    func configure(with movie: Movie) {
-        name.text = movie.title
-        subtitle.text = movie.overview
+    func configure(with app: Genre) {
+        name.text = app.name + "  \(emojis.randomElement() ?? "")"
     }
-    
 }
