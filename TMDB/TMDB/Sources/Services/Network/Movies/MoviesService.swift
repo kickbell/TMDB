@@ -20,8 +20,8 @@ struct MoviesService: HTTPClient, MoviesServiceType {
         return await sendRequest(endpoint: MoviesEndpoint.upcomming, responseModel: Movies.self)
     }
     
-    func genre() async -> Result<Movies, NetworkError> {
-        return await sendRequest(endpoint: MoviesEndpoint.genre, responseModel: Movies.self)
+    func genre() async -> Result<Genres, NetworkError> {
+        return await sendRequest(endpoint: MoviesEndpoint.genre, responseModel: Genres.self)
     }
 
     func search(query: String, page: Int) async -> Result<Movies, NetworkError> {

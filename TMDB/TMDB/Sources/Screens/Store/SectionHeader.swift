@@ -12,8 +12,8 @@ class SectionHeader: UICollectionViewCell {
     // MARK: - Views
     
     private let separator = UIView()
-    private let title = UILabel()
-    private let subtitle = UILabel()
+    let title = UILabel()
+    let subtitle = UILabel()
     private var innerStackView = UIStackView()
     private var outerStackView = UIStackView()
     

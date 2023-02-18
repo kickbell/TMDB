@@ -25,7 +25,7 @@ class MainTabBarController: UITabBarController {
     }
     
     func addViewControllers() {
-        let movieStore = UINavigationController(rootViewController: MovieStoreController())
+        let movieStore = UINavigationController(rootViewController: MovieStoreController(service: MoviesService()))
         let movieStoreItem = UITabBarItem(title: "스토어", image: UIImage(systemName: "cart"), selectedImage: UIImage(systemName: "cart.fill"))
         movieStore.tabBarItem = movieStoreItem
         

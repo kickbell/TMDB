@@ -11,7 +11,7 @@ protocol MoviesServiceType {
     func popular() async -> Result<Movies, NetworkError>
     func topRated() async -> Result<Movies, NetworkError>
     func upcoming() async -> Result<Movies, NetworkError>
-    func genre() async -> Result<Movies, NetworkError>
+    func genre() async -> Result<Genres, NetworkError>
     func search(query: String, page: Int) async -> Result<Movies, NetworkError>
     func detail(id: Int) async -> Result<MovieDetail, NetworkError>
     func trending() async -> Result<Movies, NetworkError>

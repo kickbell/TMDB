@@ -11,3 +11,13 @@ struct Genre: Decodable {
     let id: Int
     let name: String
 }
+
+extension Genre: Hashable {
+    public static func == (lhs: Genre, rhs: Genre) -> Bool {
+        return lhs.id == rhs.id
+    }
+
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
+}
