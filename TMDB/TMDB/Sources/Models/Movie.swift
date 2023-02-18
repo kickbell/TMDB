@@ -9,6 +9,7 @@ import Foundation
 
 struct Movie {
     let backdropPath: String?
+    let posterPath: String?
     let id: Int
     let overview: String
     let releaseDate: String
@@ -33,6 +34,7 @@ extension Movie: Decodable {
         case id
         case title
         case backdropPath = "backdrop_path"
+        case posterPath = "poster_path"
         case releaseDate = "release_date"
         case voteAverage = "vote_average"
         case voteCount = "vote_count"

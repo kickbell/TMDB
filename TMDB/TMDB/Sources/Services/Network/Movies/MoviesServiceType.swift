@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol MoviesServiceType {
+protocol MoviesServiceType: AnyObject {
     func popular() async -> Result<Movies, NetworkError>
     func topRated() async -> Result<Movies, NetworkError>
     func upcoming() async -> Result<Movies, NetworkError>

@@ -11,7 +11,7 @@ class TrendMovieController: UITabBarController {
     
     // MARK: - Views
     
-    private let imageView = UIImageView()
+    private let poster = UIImageView()
     private let largeTitle = UILabel()
     private let shuffleButton = UIButton()
     private let subtitle = UILabel()
@@ -62,9 +62,9 @@ class TrendMovieController: UITabBarController {
         subtitle.numberOfLines = 0
         subtitle.textColor = .secondaryLabel
         
-        imageView.layer.cornerRadius = 5
-        imageView.contentMode = .scaleAspectFill
-        imageView.clipsToBounds = true
+        poster.layer.cornerRadius = 5
+        poster.contentMode = .scaleAspectFill
+        poster.clipsToBounds = true
         
         name.font = UIFont.preferredFont(forTextStyle: .title3)
         name.textColor = .label
@@ -84,7 +84,7 @@ class TrendMovieController: UITabBarController {
         innerStackView = UIStackView(arrangedSubviews: [largeTitle, shuffleButton])
         innerStackView.axis = .horizontal
         
-        outerStackView = UIStackView(arrangedSubviews: [innerStackView, subtitle, imageView, name, info, overview, moveButton, emptyView])
+        outerStackView = UIStackView(arrangedSubviews: [innerStackView, subtitle, poster, name, info, overview, moveButton, emptyView])
         outerStackView.translatesAutoresizingMaskIntoConstraints = false
         outerStackView.spacing = 10
         outerStackView.axis = .vertical
@@ -106,7 +106,7 @@ class TrendMovieController: UITabBarController {
             outerStackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
         
-        outerStackView.setCustomSpacing(20, after: imageView)
+        outerStackView.setCustomSpacing(20, after: poster)
         outerStackView.setCustomSpacing(20, after: overview)
     }
     
@@ -123,7 +123,7 @@ class TrendMovieController: UITabBarController {
             case .success(let trending):
                 self.trending = trending.items
                 self.configure(with: trending.items[0])
-                self.posterPath = trending.items[0].backdropPath
+                self.posterPath = trending.items[0].posterPath
             case .failure(let error):
                 self.showModal(title: "Error", message: error.description)
             }
@@ -136,6 +136,18 @@ class TrendMovieController: UITabBarController {
         info.text = "| ⭐️\(movie.voteAverage) | \(movie.releaseDate) |"
         overview.text = movie.overview
         posterPath = movie.backdropPath
+        loadImage(from: movie.backdropPath)
+    }
+    
+    private func loadImage(from path: String?) {
+        guard let path = path,
+              let url = URL(string: ApiConstants.mediumImageUrl + path) else { return }
+        ImageLoaderService.shared.loadImage(from: url) { [weak self] result in
+            guard let image = try? result.get() else { return }
+            DispatchQueue.main.async {
+                self?.poster.image = image
+            }
+        }
     }
     
     @objc func open() {

@@ -7,11 +7,11 @@
 
 import UIKit
 
-class DetailMovieController: UITabBarController {
+class DetailMovieController: UIViewController {
     
     // MARK: - Views
     
-    private let imageView = UIImageView()
+    private let poster = UIImageView()
     private let name = UILabel()
     private let tagline = UILabel()
     private let info = UILabel()
@@ -49,12 +49,11 @@ class DetailMovieController: UITabBarController {
         view.backgroundColor = .white
         
         hidesBottomBarWhenPushed = true
-        tabBar.isHidden = true
         
-        imageView.layer.cornerRadius = 5
-        imageView.contentMode = .scaleAspectFill
-        imageView.clipsToBounds = true
-        imageView.backgroundColor = .lightGray
+        poster.layer.cornerRadius = 5
+        poster.contentMode = .scaleAspectFill
+        poster.clipsToBounds = true
+        poster.backgroundColor = .lightGray
         
         name.font = UIFont.preferredFont(forTextStyle: .title3)
         name.textColor = .label
@@ -75,7 +74,7 @@ class DetailMovieController: UITabBarController {
         moveButton.backgroundColor = .systemBlue
         moveButton.addTarget(self, action: #selector(open), for: .touchUpInside)
         
-        stackView = UIStackView(arrangedSubviews: [imageView, name, tagline, info, overview, moveButton, emptyView])
+        stackView = UIStackView(arrangedSubviews: [poster, name, tagline, info, overview, moveButton, emptyView])
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.spacing = 10
         stackView.axis = .vertical
@@ -97,7 +96,7 @@ class DetailMovieController: UITabBarController {
             stackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
         
-        stackView.setCustomSpacing(20, after: imageView)
+        stackView.setCustomSpacing(20, after: poster)
         stackView.setCustomSpacing(20, after: overview)
     }
     
@@ -127,6 +126,18 @@ class DetailMovieController: UITabBarController {
         tagline.text = movie.tagline
         info.text = "| ⭐️\(movie.voteAverage) | \(movie.releaseDate) | \(movie.runtime ?? 0)분 | \(movie.genres.map { $0.name }.joined(separator: ", ")) |"
         overview.text = movie.overview
+        loadImage(from: movie.backdropPath)
+    }
+    
+    private func loadImage(from path: String?) {
+        guard let path = path,
+              let url = URL(string: ApiConstants.mediumImageUrl + path) else { return }
+        ImageLoaderService.shared.loadImage(from: url) { [weak self] result in
+            guard let image = try? result.get() else { return }
+            DispatchQueue.main.async {
+                self?.poster.image = image
+            }
+        }
     }
     
     @objc func open() {

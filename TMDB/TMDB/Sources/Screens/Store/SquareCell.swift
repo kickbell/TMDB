@@ -72,5 +72,17 @@ class SquareCell: UICollectionViewCell {
     
     func configure(with movie: Movie) {
         name.text = movie.title
+        loadImage(from: movie.backdropPath)
+    }
+    
+    private func loadImage(from path: String?) {
+        guard let path = path,
+              let url = URL(string: ApiConstants.mediumImageUrl + path) else { return }
+        ImageLoaderService.shared.loadImage(from: url) { [weak self] result in
+            guard let image = try? result.get() else { return }
+            DispatchQueue.main.async {
+                self?.poster.image = image
+            }
+        }
     }
 }

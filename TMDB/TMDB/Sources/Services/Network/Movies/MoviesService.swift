@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct MoviesService: HTTPClient, MoviesServiceType {
+final class MoviesService: HTTPClient, MoviesServiceType {
     func popular() async -> Result<Movies, NetworkError> {
         return await sendRequest(endpoint: MoviesEndpoint.popular, responseModel: Movies.self)
     }
