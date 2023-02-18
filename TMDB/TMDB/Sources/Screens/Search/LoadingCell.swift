@@ -41,7 +41,7 @@ class LoadingCell: UITableViewCell {
         contentView.addSubview(indicatorView)
     }
     
-    private func start() {
+    func start() {
         indicatorView.startAnimating()
     }
 }

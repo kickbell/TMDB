@@ -29,7 +29,7 @@ class MainTabBarController: UITabBarController {
         let movieStoreItem = UITabBarItem(title: "스토어", image: UIImage(systemName: "cart"), selectedImage: UIImage(systemName: "cart.fill"))
         movieStore.tabBarItem = movieStoreItem
         
-        let searchMovie = UINavigationController(rootViewController: SearchMovieController())
+        let searchMovie = UINavigationController(rootViewController: SearchMovieController(service: MoviesService()))
         let searchMovieItem = UITabBarItem(title: "검색", image: UIImage(systemName: "magnifyingglass"), selectedImage: nil)
         searchMovie.tabBarItem = searchMovieItem
         
