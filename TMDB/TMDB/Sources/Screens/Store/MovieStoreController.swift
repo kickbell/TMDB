@@ -175,7 +175,6 @@ class MovieStoreController: UIViewController {
         snapshot.appendSections(Section.allCases)
         
         guard let result = fetchResult else {
-            print("invalid fetchResult...")
             return
         }
         
@@ -295,9 +294,9 @@ extension MovieStoreController: UICollectionViewDelegate {
         default: break
         }
         
-        let detailViewController = DetailMovieController(service: MoviesService(), with: movie?.id ?? 0)
-        detailViewController.navigationItem.largeTitleDisplayMode = .never
-        self.navigationController?.pushViewController(detailViewController, animated: true)
+//        let detailViewController = DetailMovieController(service: MoviesService(), with: movie?.id ?? 0)
+//        detailViewController.navigationItem.largeTitleDisplayMode = .never
+//        self.navigationController?.pushViewController(detailViewController, animated: true)
     }
 
 }

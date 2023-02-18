@@ -15,6 +15,6 @@ struct Movies {
 extension Movies: Decodable {
     enum CodingKeys: String, CodingKey {
         case items = "results"
-        case count = "totalResults"
+        case count = "total_results"
     }
 }
