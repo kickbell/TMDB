@@ -13,7 +13,7 @@ class SearchMovieController: UITableViewController, UISearchBarDelegate {
     private let searchController = UISearchController(searchResultsController: nil)
     
     // MARK: Properties
-    
+    weak var coordinator: SearchCoordinator?
     private(set) var movies: [Movie] = []
     private let service: MoviesServiceType
     private var isPaging = false
@@ -133,8 +133,7 @@ class SearchMovieController: UITableViewController, UISearchBarDelegate {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let target = movies[indexPath.row]
-        let detailViewController = DetailMovieController(service: MoviesService(), with: target.id)
-        self.navigationController?.pushViewController(detailViewController, animated: true)
+        coordinator?.detail(target.id)
     }
     
     // MARK: - ScrollView Methods

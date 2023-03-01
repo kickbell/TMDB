@@ -27,6 +27,9 @@ class TrendMovieController: UITabBarController {
     private var trending: [Movie] = []
     private var posterPath: String?
     
+    // MARK: Properties
+    weak var coordinator: TrendCoordinator?
+    
     // MARK: LifeCycle
     
     init(service: MoviesServiceType) {
@@ -135,7 +138,7 @@ class TrendMovieController: UITabBarController {
         name.text = movie.title
         info.text = "| ⭐️\(movie.voteAverage) | \(movie.releaseDate) |"
         overview.text = movie.overview
-        posterPath = movie.backdropPath
+        posterPath = movie.posterPath
         loadImage(from: movie.backdropPath)
     }
     

@@ -14,7 +14,7 @@ class MovieStoreController: UIViewController {
     var collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewLayout())
     
     // MARK: Properties
-    
+    weak var coordinator: StoreCoordinator?
     var dataSource: UICollectionViewDiffableDataSource<Section, Item>?
     private(set) var fetchResult: FetchResult?
     private let service: MoviesServiceType
@@ -70,7 +70,6 @@ class MovieStoreController: UIViewController {
                 completion(result)
             } catch {
                 showModal(title: "Error", message: error.localizedDescription)
-                print(error.localizedDescription)
             }
         }
     }
@@ -294,9 +293,7 @@ extension MovieStoreController: UICollectionViewDelegate {
         default: break
         }
         
-        let detailViewController = DetailMovieController(service: MoviesService(), with: movie?.id ?? 0)
-        detailViewController.navigationItem.largeTitleDisplayMode = .never
-        self.navigationController?.pushViewController(detailViewController, animated: true)
+        coordinator?.detail(movie?.id ?? 0)
     }
 
 }

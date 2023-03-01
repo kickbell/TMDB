@@ -9,15 +9,27 @@ import UIKit
 
 class MainTabBarController: UITabBarController {
     
+    // MARK: Properties
+    let store = StoreCoordinator(navigationController: UINavigationController())
+    let search = SearchCoordinator(navigationController: UINavigationController())
+    let trend = TrendCoordinator(navigationController: UINavigationController())
+    
     // MARK: - LifeCycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configure()
         addAttribues()
         addViewControllers()
     }
     
     // MARK: - Methods
+    
+    func configure() {
+        store.start()
+        search.start()
+        trend.start()
+    }
     
     func addAttribues() {
         self.tabBar.tintColor = .label
@@ -25,18 +37,10 @@ class MainTabBarController: UITabBarController {
     }
     
     func addViewControllers() {
-        let movieStore = UINavigationController(rootViewController: MovieStoreController(service: MoviesService()))
-        let movieStoreItem = UITabBarItem(title: "스토어", image: UIImage(systemName: "cart"), selectedImage: UIImage(systemName: "cart.fill"))
-        movieStore.tabBarItem = movieStoreItem
-        
-        let searchMovie = UINavigationController(rootViewController: SearchMovieController(service: MoviesService()))
-        let searchMovieItem = UITabBarItem(title: "검색", image: UIImage(systemName: "magnifyingglass"), selectedImage: nil)
-        searchMovie.tabBarItem = searchMovieItem
-        
-        let trendMovie = UINavigationController(rootViewController: TrendMovieController(service: MoviesService()))
-        let trendMovieItem = UITabBarItem(title: "트렌드", image: UIImage(systemName: "t.circle"), selectedImage: UIImage(systemName: "t.circle.fill"))
-        trendMovie.tabBarItem = trendMovieItem
-        
-        self.viewControllers = [movieStore, searchMovie, trendMovie]
+        self.viewControllers = [
+            store.navigationController,
+            search.navigationController,
+            trend.navigationController
+        ]
     }
 }
