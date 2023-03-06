@@ -12,8 +12,6 @@
 		A8146D8D29A111B50080D108 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A8146D8C29A111B50080D108 /* Assets.xcassets */; };
 		A8146D9029A111B50080D108 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8146D8E29A111B50080D108 /* LaunchScreen.storyboard */; };
 		A8146D9B29A111B50080D108 /* TMDBTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8146D9A29A111B50080D108 /* TMDBTests.swift */; };
-		A8146DA529A111B50080D108 /* TMDBUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8146DA429A111B50080D108 /* TMDBUITests.swift */; };
-		A8146DA729A111B50080D108 /* TMDBUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8146DA629A111B50080D108 /* TMDBUITestsLaunchTests.swift */; };
 		A8146DB829A112E80080D108 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8146DB729A112E80080D108 /* MainTabBarController.swift */; };
 		A8146DBA29A116EF0080D108 /* MovieStoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8146DB929A116EF0080D108 /* MovieStoreController.swift */; };
 		A8146DBC29A116FD0080D108 /* SearchMovieController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8146DBB29A116FD0080D108 /* SearchMovieController.swift */; };
@@ -48,17 +46,14 @@
 		A81BFF6429B0074500C9A57E /* SearchCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81BFF6329B0074500C9A57E /* SearchCoordinator.swift */; };
 		A81BFF6629B0074F00C9A57E /* TrendCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81BFF6529B0074F00C9A57E /* TrendCoordinator.swift */; };
 		A81BFF6829B0077000C9A57E /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81BFF6729B0077000C9A57E /* Coordinator.swift */; };
+		A828D8D229B266C9004464CD /* TMDBUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828D8C129B260DF004464CD /* TMDBUITests.swift */; };
+		A828D8D429B66BD9004464CD /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828D8D329B66BD9004464CD /* APIRequest.swift */; };
+		A880275129B236D100FE13EB /* MovieDetails.json in Resources */ = {isa = PBXBuildFile; fileRef = A880275029B236D100FE13EB /* MovieDetails.json */; };
+		A880275329B2380F00FE13EB /* Movies.json in Resources */ = {isa = PBXBuildFile; fileRef = A880275229B2380F00FE13EB /* Movies.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		A8146D9729A111B50080D108 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A8146D7829A111B30080D108 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = A8146D7F29A111B30080D108;
-			remoteInfo = TMDB;
-		};
-		A8146DA129A111B50080D108 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A8146D7829A111B30080D108 /* Project object */;
 			proxyType = 1;
@@ -76,9 +71,6 @@
 		A8146D9129A111B50080D108 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A8146D9629A111B50080D108 /* TMDBTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TMDBTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8146D9A29A111B50080D108 /* TMDBTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBTests.swift; sourceTree = "<group>"; };
-		A8146DA029A111B50080D108 /* TMDBUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TMDBUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A8146DA429A111B50080D108 /* TMDBUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBUITests.swift; sourceTree = "<group>"; };
-		A8146DA629A111B50080D108 /* TMDBUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		A8146DB729A112E80080D108 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		A8146DB929A116EF0080D108 /* MovieStoreController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieStoreController.swift; sourceTree = "<group>"; };
 		A8146DBB29A116FD0080D108 /* SearchMovieController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMovieController.swift; sourceTree = "<group>"; };
@@ -113,6 +105,10 @@
 		A81BFF6329B0074500C9A57E /* SearchCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCoordinator.swift; sourceTree = "<group>"; };
 		A81BFF6529B0074F00C9A57E /* TrendCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendCoordinator.swift; sourceTree = "<group>"; };
 		A81BFF6729B0077000C9A57E /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		A828D8C129B260DF004464CD /* TMDBUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBUITests.swift; sourceTree = "<group>"; };
+		A828D8D329B66BD9004464CD /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
+		A880275029B236D100FE13EB /* MovieDetails.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MovieDetails.json; sourceTree = "<group>"; };
+		A880275229B2380F00FE13EB /* Movies.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Movies.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,13 +126,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A8146D9D29A111B50080D108 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -145,7 +134,6 @@
 			children = (
 				A8146D8229A111B30080D108 /* TMDB */,
 				A8146D9929A111B50080D108 /* TMDBTests */,
-				A8146DA329A111B50080D108 /* TMDBUITests */,
 				A8146D8129A111B30080D108 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -155,7 +143,6 @@
 			children = (
 				A8146D8029A111B30080D108 /* TMDB.app */,
 				A8146D9629A111B50080D108 /* TMDBTests.xctest */,
-				A8146DA029A111B50080D108 /* TMDBUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -174,17 +161,11 @@
 			isa = PBXGroup;
 			children = (
 				A8146D9A29A111B50080D108 /* TMDBTests.swift */,
+				A880275229B2380F00FE13EB /* Movies.json */,
+				A880275029B236D100FE13EB /* MovieDetails.json */,
+				A828D8C129B260DF004464CD /* TMDBUITests.swift */,
 			);
 			path = TMDBTests;
-			sourceTree = "<group>";
-		};
-		A8146DA329A111B50080D108 /* TMDBUITests */ = {
-			isa = PBXGroup;
-			children = (
-				A8146DA429A111B50080D108 /* TMDBUITests.swift */,
-				A8146DA629A111B50080D108 /* TMDBUITestsLaunchTests.swift */,
-			);
-			path = TMDBUITests;
 			sourceTree = "<group>";
 		};
 		A8146DB329A111CD0080D108 /* AppDelegates */ = {
@@ -305,6 +286,7 @@
 				A8146DDD29A120530080D108 /* Endpoint.swift */,
 				A8146DE229A127530080D108 /* HttpMethod.swift */,
 				A8146DE429A1276A0080D108 /* HttpClient.swift */,
+				A828D8D329B66BD9004464CD /* APIRequest.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -413,24 +395,6 @@
 			productReference = A8146D9629A111B50080D108 /* TMDBTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		A8146D9F29A111B50080D108 /* TMDBUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = A8146DB029A111B50080D108 /* Build configuration list for PBXNativeTarget "TMDBUITests" */;
-			buildPhases = (
-				A8146D9C29A111B50080D108 /* Sources */,
-				A8146D9D29A111B50080D108 /* Frameworks */,
-				A8146D9E29A111B50080D108 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				A8146DA229A111B50080D108 /* PBXTargetDependency */,
-			);
-			name = TMDBUITests;
-			productName = TMDBUITests;
-			productReference = A8146DA029A111B50080D108 /* TMDBUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -445,10 +409,6 @@
 						CreatedOnToolsVersion = 13.4.1;
 					};
 					A8146D9529A111B50080D108 = {
-						CreatedOnToolsVersion = 13.4.1;
-						TestTargetID = A8146D7F29A111B30080D108;
-					};
-					A8146D9F29A111B50080D108 = {
 						CreatedOnToolsVersion = 13.4.1;
 						TestTargetID = A8146D7F29A111B30080D108;
 					};
@@ -469,7 +429,6 @@
 			targets = (
 				A8146D7F29A111B30080D108 /* TMDB */,
 				A8146D9529A111B50080D108 /* TMDBTests */,
-				A8146D9F29A111B50080D108 /* TMDBUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -488,13 +447,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A8146D9E29A111B50080D108 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				A880275129B236D100FE13EB /* MovieDetails.json in Resources */,
+				A880275329B2380F00FE13EB /* Movies.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -507,6 +461,7 @@
 			files = (
 				A8146DBE29A1170A0080D108 /* TrendMovieController.swift in Sources */,
 				A8146DCF29A11CDD0080D108 /* SearchCell.swift in Sources */,
+				A828D8D429B66BD9004464CD /* APIRequest.swift in Sources */,
 				A8146E0629A136920080D108 /* ImageCache.swift in Sources */,
 				A8146E0129A1365C0080D108 /* ImageLoaderServiceType.swift in Sources */,
 				A8146DEC29A129C00080D108 /* MoviesService.swift in Sources */,
@@ -548,16 +503,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A828D8D229B266C9004464CD /* TMDBUITests.swift in Sources */,
 				A8146D9B29A111B50080D108 /* TMDBTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A8146D9C29A111B50080D108 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A8146DA529A111B50080D108 /* TMDBUITests.swift in Sources */,
-				A8146DA729A111B50080D108 /* TMDBUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -568,11 +515,6 @@
 			isa = PBXTargetDependency;
 			target = A8146D7F29A111B30080D108 /* TMDB */;
 			targetProxy = A8146D9729A111B50080D108 /* PBXContainerItemProxy */;
-		};
-		A8146DA229A111B50080D108 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = A8146D7F29A111B30080D108 /* TMDB */;
-			targetProxy = A8146DA129A111B50080D108 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -707,6 +649,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = HBXK2UB5Z3;
@@ -723,8 +666,10 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = "";
 				PRODUCT_BUNDLE_IDENTIFIER = dev.kickbell.TMDB;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -736,6 +681,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = HBXK2UB5Z3;
@@ -752,8 +698,10 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = "";
 				PRODUCT_BUNDLE_IDENTIFIER = dev.kickbell.TMDB;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -769,8 +717,9 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = HBXK2UB5Z3;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = "";
 				PRODUCT_BUNDLE_IDENTIFIER = dev.kickbell.TMDBTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
@@ -789,50 +738,15 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = HBXK2UB5Z3;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = "";
 				PRODUCT_BUNDLE_IDENTIFIER = dev.kickbell.TMDBTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TMDB.app/TMDB";
-			};
-			name = Release;
-		};
-		A8146DB129A111B50080D108 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = HBXK2UB5Z3;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = dev.kickbell.TMDBUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = TMDB;
-			};
-			name = Debug;
-		};
-		A8146DB229A111B50080D108 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = HBXK2UB5Z3;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = dev.kickbell.TMDBUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = TMDB;
 			};
 			name = Release;
 		};
@@ -862,15 +776,6 @@
 			buildConfigurations = (
 				A8146DAE29A111B50080D108 /* Debug */,
 				A8146DAF29A111B50080D108 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		A8146DB029A111B50080D108 /* Build configuration list for PBXNativeTarget "TMDBUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				A8146DB129A111B50080D108 /* Debug */,
-				A8146DB229A111B50080D108 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

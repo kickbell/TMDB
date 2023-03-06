@@ -7,8 +7,6 @@
 
 import Foundation
 
-
-
 struct MovieDetail {
     let backdropPath: String?
     let genres: [Genre]

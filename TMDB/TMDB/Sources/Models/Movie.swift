@@ -40,3 +40,4 @@ extension Movie: Decodable {
         case voteCount = "vote_count"
     }
 }
+

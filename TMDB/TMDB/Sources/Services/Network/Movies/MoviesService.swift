@@ -7,32 +7,37 @@
 
 import Foundation
 
-final class MoviesService: HTTPClient, MoviesServiceType {
+
+final class MoviesService: MoviesServiceType {
+    private let moviesLoader = APIRequestLoader.init(apiRequest: MoviesRequest())
+    private let genresLoader = APIRequestLoader.init(apiRequest: GenresRequest())
+    private let movieDetailLoader = APIRequestLoader.init(apiRequest: MovieDetailRequest())
+    
     func popular() async -> Result<Movies, NetworkError> {
-        return await sendRequest(endpoint: MoviesEndpoint.popular, responseModel: Movies.self)
+        return await moviesLoader.loadAPIRequest(requestData: MoviesEndpoint.popular)
     }
     
     func topRated() async -> Result<Movies, NetworkError> {
-        return await sendRequest(endpoint: MoviesEndpoint.topRated, responseModel: Movies.self)
+        return await moviesLoader.loadAPIRequest(requestData: MoviesEndpoint.popular)
     }
     
     func upcoming() async -> Result<Movies, NetworkError> {
-        return await sendRequest(endpoint: MoviesEndpoint.upcomming, responseModel: Movies.self)
+        return await moviesLoader.loadAPIRequest(requestData: MoviesEndpoint.upcomming)
     }
     
     func genre() async -> Result<Genres, NetworkError> {
-        return await sendRequest(endpoint: MoviesEndpoint.genre, responseModel: Genres.self)
+        return await genresLoader.loadAPIRequest(requestData: MoviesEndpoint.genre)
     }
 
     func search(query: String, page: Int) async -> Result<Movies, NetworkError> {
-        return await sendRequest(endpoint: MoviesEndpoint.search(query: query, page: page), responseModel: Movies.self)
+        return await moviesLoader.loadAPIRequest(requestData: MoviesEndpoint.search(query: query, page: page))
     }
     
     func detail(id: Int) async -> Result<MovieDetail, NetworkError> {
-        return await sendRequest(endpoint: MoviesEndpoint.movieDetail(id: id), responseModel: MovieDetail.self)
+        return await movieDetailLoader.loadAPIRequest(requestData: MoviesEndpoint.movieDetail(id: id))
     }
     
     func trending() async -> Result<Movies, NetworkError> {
-        return await sendRequest(endpoint: MoviesEndpoint.trending, responseModel: Movies.self)
+        return await moviesLoader.loadAPIRequest(requestData: MoviesEndpoint.trending)
     }
 }
