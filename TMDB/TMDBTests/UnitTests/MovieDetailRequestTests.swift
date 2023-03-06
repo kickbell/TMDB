@@ -9,8 +9,8 @@ import XCTest
 @testable import TMDB
 
 class MovieDetailRequestTests: XCTestCase {
-    private let movieId = 475557
     private let request = MovieDetailRequest()
+    private let movieId = 475557
     
     func test_URLRequest생성하기() throws {
         let urlRequest = try request.makeRequest(from: MoviesEndpoint.movieDetail(id: movieId))

@@ -53,8 +53,13 @@
 		A828D8DC29B677DB004464CD /* MovieDetailRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828D8DB29B677DB004464CD /* MovieDetailRequestTests.swift */; };
 		A828D8DE29B67E52004464CD /* MoviesRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828D8DD29B67E52004464CD /* MoviesRequestTests.swift */; };
 		A828D8E029B67E5F004464CD /* GenresRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828D8DF29B67E5F004464CD /* GenresRequestTests.swift */; };
+		A828D8E529B683A4004464CD /* Genres.json in Resources */ = {isa = PBXBuildFile; fileRef = A828D8E429B683A4004464CD /* Genres.json */; };
+		A828D8E729B68AD0004464CD /* MoviePopulor.json in Resources */ = {isa = PBXBuildFile; fileRef = A828D8E629B68AD0004464CD /* MoviePopulor.json */; };
+		A828D8E929B68AF0004464CD /* MovieTopRated.json in Resources */ = {isa = PBXBuildFile; fileRef = A828D8E829B68AF0004464CD /* MovieTopRated.json */; };
+		A828D8EB29B68B1D004464CD /* MovieSearch.json in Resources */ = {isa = PBXBuildFile; fileRef = A828D8EA29B68B1D004464CD /* MovieSearch.json */; };
+		A828D8ED29B68B45004464CD /* MovieTrend.json in Resources */ = {isa = PBXBuildFile; fileRef = A828D8EC29B68B45004464CD /* MovieTrend.json */; };
+		A828D8EF29B68B71004464CD /* MovieUpcoming.json in Resources */ = {isa = PBXBuildFile; fileRef = A828D8EE29B68B71004464CD /* MovieUpcoming.json */; };
 		A880275129B236D100FE13EB /* MovieDetails.json in Resources */ = {isa = PBXBuildFile; fileRef = A880275029B236D100FE13EB /* MovieDetails.json */; };
-		A880275329B2380F00FE13EB /* Movies.json in Resources */ = {isa = PBXBuildFile; fileRef = A880275229B2380F00FE13EB /* Movies.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,8 +122,13 @@
 		A828D8DB29B677DB004464CD /* MovieDetailRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailRequestTests.swift; sourceTree = "<group>"; };
 		A828D8DD29B67E52004464CD /* MoviesRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesRequestTests.swift; sourceTree = "<group>"; };
 		A828D8DF29B67E5F004464CD /* GenresRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenresRequestTests.swift; sourceTree = "<group>"; };
+		A828D8E429B683A4004464CD /* Genres.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Genres.json; sourceTree = "<group>"; };
+		A828D8E629B68AD0004464CD /* MoviePopulor.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MoviePopulor.json; sourceTree = "<group>"; };
+		A828D8E829B68AF0004464CD /* MovieTopRated.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MovieTopRated.json; sourceTree = "<group>"; };
+		A828D8EA29B68B1D004464CD /* MovieSearch.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MovieSearch.json; sourceTree = "<group>"; };
+		A828D8EC29B68B45004464CD /* MovieTrend.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MovieTrend.json; sourceTree = "<group>"; };
+		A828D8EE29B68B71004464CD /* MovieUpcoming.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MovieUpcoming.json; sourceTree = "<group>"; };
 		A880275029B236D100FE13EB /* MovieDetails.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MovieDetails.json; sourceTree = "<group>"; };
-		A880275229B2380F00FE13EB /* Movies.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Movies.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -382,7 +392,12 @@
 		A828D8E229B67EA1004464CD /* Responses */ = {
 			isa = PBXGroup;
 			children = (
-				A880275229B2380F00FE13EB /* Movies.json */,
+				A828D8E629B68AD0004464CD /* MoviePopulor.json */,
+				A828D8E829B68AF0004464CD /* MovieTopRated.json */,
+				A828D8EE29B68B71004464CD /* MovieUpcoming.json */,
+				A828D8EA29B68B1D004464CD /* MovieSearch.json */,
+				A828D8EC29B68B45004464CD /* MovieTrend.json */,
+				A828D8E429B683A4004464CD /* Genres.json */,
 				A880275029B236D100FE13EB /* MovieDetails.json */,
 			);
 			path = Responses;
@@ -486,8 +501,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A828D8E529B683A4004464CD /* Genres.json in Resources */,
 				A880275129B236D100FE13EB /* MovieDetails.json in Resources */,
-				A880275329B2380F00FE13EB /* Movies.json in Resources */,
+				A828D8EB29B68B1D004464CD /* MovieSearch.json in Resources */,
+				A828D8E729B68AD0004464CD /* MoviePopulor.json in Resources */,
+				A828D8EF29B68B71004464CD /* MovieUpcoming.json in Resources */,
+				A828D8E929B68AF0004464CD /* MovieTopRated.json in Resources */,
+				A828D8ED29B68B45004464CD /* MovieTrend.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

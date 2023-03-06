@@ -1,0 +1,154 @@
+{
+    "page": 1,
+    "results": [
+        {
+            "adult": false,
+            "backdrop_path": null,
+            "genre_ids": [
+                99
+            ],
+            "id": 900901,
+            "original_language": "bn",
+            "original_title": "Ironman",
+            "overview": "'Ironman Arafat', ran 1004 kilometers from Teknaf to Tetulia in 20 days, swam the Bengali Channel 6 times, completed the world's toughest one-day Ironman Triathlon Challenge three times, and became the first Bangladeshi to win the 'Ironman 70.3 World Championship'.",
+            "popularity": 0.885,
+            "poster_path": "/pnLopkBeVGd0v77gpTNdPqQESUs.jpg",
+            "release_date": "2021-11-21",
+            "title": "Ironman",
+            "video": false,
+            "vote_average": 0,
+            "vote_count": 0
+        },
+        {
+            "adult": false,
+            "backdrop_path": null,
+            "genre_ids": [
+                99
+            ],
+            "id": 890373,
+            "original_language": "mk",
+            "original_title": "Железен човек",
+            "overview": "Vojo, a retired police officer lives in Skopje, one of the most polluted cities in the world. He finds meaning in his passion and love for innovation, which he directs towards clean energy and ecology. Over the past 15 years, he has successfully implemented eight patented projects, but his passion is reserved for building a perpetual motion machine that will generate clean electricity without the need for an energy source. Will our Don Quixote-like hero succeed in fulfilling his mission – reducing pollution to save Earth from global warming and destruction by man – or will he redeem himself for the damage his obsession has caused to his family?",
+            "popularity": 0.876,
+            "poster_path": null,
+            "release_date": "",
+            "title": "Ironman",
+            "video": false,
+            "vote_average": 0,
+            "vote_count": 0
+        },
+        {
+            "adult": false,
+            "backdrop_path": null,
+            "genre_ids": [
+                28,
+                878,
+                10751,
+                35
+            ],
+            "id": 938847,
+            "original_language": "ja",
+            "original_title": "宇宙鉄人キョーダイン",
+            "overview": "Captured by an alien empire from the planet Dada, Dr. Hayama has programmed the personalities of his two kidnapped sons, Joji and Ryuji, into two Cyberroids to combat the Dada Robot Army and care for his youngest son, Kenji.",
+            "popularity": 0.6,
+            "poster_path": "/8WRbicL2lcnzpJuyXvvfoO1xlMu.jpg",
+            "release_date": "1976-07-18",
+            "title": "Space Ironman Kyodain: The Movie",
+            "video": false,
+            "vote_average": 0,
+            "vote_count": 0
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/ddk9RsNasfkmzmAyDEezvUk1HEg.jpg",
+            "genre_ids": [
+                18,
+                99
+            ],
+            "id": 10505,
+            "original_language": "de",
+            "original_title": "Lauf um Dein Leben - Vom Junkie zum Ironman",
+            "overview": "He lived the junkie's life as a heroin addict. Triathlon transformed him. Biopic of the record breaking Ironman Andreas Niedrig.",
+            "popularity": 2.033,
+            "poster_path": "/M7nCUXO0ktZSggHcB1blaiuezc.jpg",
+            "release_date": "2008-04-24",
+            "title": "Run for Your Life!",
+            "video": false,
+            "vote_average": 4.7,
+            "vote_count": 8
+        },
+        {
+            "adult": false,
+            "backdrop_path": null,
+            "genre_ids": [],
+            "id": 920775,
+            "original_language": "en",
+            "original_title": "Cal Ripken Jr - The Ironman's Legendary Career",
+            "overview": "One of baseball's legends, Cal Ripken Jr., is chronicled in this illuminating documentary. Known for enjoying one of the longest careers in baseball history--21 years--Ripken Jr. has set records for fewest errors by a shortstop and highest fielding percentage. Of the numerous accolades that have been heaped on the player, his 2 MVP titles and election to the All-Century Team stand out. All of these career highlights, and many more, are explored in THE IRONMAN'S LEGENDARY CAREER.",
+            "popularity": 0.6,
+            "poster_path": "/kMlCEpxIPqmFbPkyyaBOQVWZLrU.jpg",
+            "release_date": "2001-12-18",
+            "title": "Cal Ripken Jr - The Ironman's Legendary Career",
+            "video": true,
+            "vote_average": 0,
+            "vote_count": 0
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/nekOdnyzMXMOYO2u5KjlnHAZC9L.jpg",
+            "genre_ids": [
+                27,
+                878
+            ],
+            "id": 41428,
+            "original_language": "ja",
+            "original_title": "鉄男",
+            "overview": "A \"metal fetishist\", driven mad by the maggots wriggling in the wound he's made to embed metal into his flesh, runs out into the night and is accidentally run down by a Japanese businessman and his girlfriend. The pair dispose of the corpse in hopes of quietly moving on with their lives. However, the businessman soon finds that he is now plagued by a vicious curse that transforms his flesh into iron.",
+            "popularity": 10.466,
+            "poster_path": "/zeoILvZbBIdxDSRguP2UuZXCHOy.jpg",
+            "release_date": "1989-07-01",
+            "title": "Tetsuo: The Iron Man",
+            "video": false,
+            "vote_average": 6.953,
+            "vote_count": 449
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/7yTxblK0mLcRGswkvn2UnnleUs3.jpg",
+            "genre_ids": [
+                18
+            ],
+            "id": 470360,
+            "original_language": "pl",
+            "original_title": "Najlepszy",
+            "overview": "Based on true events. In 1980s Poland, Jerzy Górski is a young man who finds the determination to struggle against his drug addiction through athletic training, with the aim of competing in the US Ironman Triathlon.",
+            "popularity": 5.801,
+            "poster_path": "/lyo86a4EZKVkuVXXu9AEo1E4cqT.jpg",
+            "release_date": "2017-11-17",
+            "title": "Breaking the Limits",
+            "video": false,
+            "vote_average": 7.726,
+            "vote_count": 82
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/xqDiPe68EESDmAZOqBpMR4CJr1Z.jpg",
+            "genre_ids": [
+                18
+            ],
+            "id": 471645,
+            "original_language": "ja",
+            "original_title": "ジャコ萬と鉄",
+            "overview": "In a village subsisting on its herring fishery, a one-eyed criminal named Jakoman terrorizes the inhabitants. One of them, the son of the head of one of the fish companies by the name of Tetsu, decides to overthrow Jakoman and his cohorts.",
+            "popularity": 1.4,
+            "poster_path": "/AncPACH4rshOmyjVKFTARxRpTcB.jpg",
+            "release_date": "1964-02-08",
+            "title": "Jakoman and Tetsu",
+            "video": false,
+            "vote_average": 6,
+            "vote_count": 1
+        }
+    ],
+    "total_pages": 1,
+    "total_results": 8
+}
