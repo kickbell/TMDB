@@ -32,25 +32,25 @@ import XCTest
  화이트 박스 테스트 에서는 테스트 중인 항목의 내부가 어떻게 작동하는지 신경을 씁니다 . 따라서 사물의 출력을 확인하는 대신 테스트 중인 사물의 내부 변수가 올바른지 확인할 수 있습니다.
  */
 
-class TMDBUITests: XCTestCase {
-    
-    
-    func testExample() throws {
-        
-        let movies = Movies.loadFromFile("Movies.json")
-        print(movies)
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-    
-}
+//class TMDBUITests: XCTestCase {
+//
+//
+//    func testExample() throws {
+//
+//        let movies = Movies.loadFromFile("Movies.json")
+//        print(movies)
+//        // Use XCTAssert and related functions to verify your tests produce the correct results.
+//    }
+//
+//}
 
 
 
 
 extension Decodable {
-    static func loadFromFile(_ filename: String) -> Self {
+    static func loadFromFile(_ filename: String,_ type: AnyClass) -> Self {
         do {
-            let path = Bundle(for: TMDBTests.self).path(forResource: filename, ofType: nil)!
+            let path = Bundle(for: type).path(forResource: filename, ofType: nil)!
             let data = try Data(contentsOf: URL(fileURLWithPath: path))
             return try JSONDecoder().decode(Self.self, from: data)
         } catch {
