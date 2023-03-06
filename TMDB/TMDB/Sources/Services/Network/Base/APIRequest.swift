@@ -15,7 +15,6 @@ protocol APIRequest {
     func parseResponse(data: Data) throws -> ResponseDataType
 }
 
-
 class APIRequestLoader<T: APIRequest> {
     let apiRequest: T
     let urlSession: URLSession
@@ -50,93 +49,3 @@ class APIRequestLoader<T: APIRequest> {
     }
 }
 
-
-
-
-
-struct MoviesRequest: APIRequest {
-    func makeRequest(from endpoint: MoviesEndpoint) throws -> URLRequest {
-        var urlComponents = URLComponents()
-        urlComponents.scheme = endpoint.scheme
-        urlComponents.host = endpoint.host
-        urlComponents.path = endpoint.path
-        urlComponents.queryItems = endpoint.queryItems
-        
-        guard let url = urlComponents.url else {
-            throw NetworkError.invalidURL
-        }
-        
-        var request = URLRequest(url: url)
-        request.httpMethod = endpoint.method.rawValue
-        request.allHTTPHeaderFields = endpoint.header
-
-        if let body = endpoint.body {
-            request.httpBody = try? JSONSerialization.data(withJSONObject: body, options: [])
-        }
-        
-        return request
-    }
-    
-    func parseResponse(data: Data) throws -> Movies {
-        return try JSONDecoder().decode(Movies.self, from: data)
-    }
-}
-
-
-struct GenresRequest: APIRequest {
-    func makeRequest(from endpoint: MoviesEndpoint) throws -> URLRequest {
-        var urlComponents = URLComponents()
-        urlComponents.scheme = endpoint.scheme
-        urlComponents.host = endpoint.host
-        urlComponents.path = endpoint.path
-        urlComponents.queryItems = endpoint.queryItems
-        
-        guard let url = urlComponents.url else {
-            throw NetworkError.invalidURL
-        }
-        
-        var request = URLRequest(url: url)
-        request.httpMethod = endpoint.method.rawValue
-        request.allHTTPHeaderFields = endpoint.header
-
-        if let body = endpoint.body {
-            request.httpBody = try? JSONSerialization.data(withJSONObject: body, options: [])
-        }
-        
-        return request
-    }
-    
-    func parseResponse(data: Data) throws -> Genres {
-        return try JSONDecoder().decode(Genres.self, from: data)
-    }
-}
-
-
-
-struct MovieDetailRequest: APIRequest {
-    func makeRequest(from endpoint: MoviesEndpoint) throws -> URLRequest {
-        var urlComponents = URLComponents()
-        urlComponents.scheme = endpoint.scheme
-        urlComponents.host = endpoint.host
-        urlComponents.path = endpoint.path
-        urlComponents.queryItems = endpoint.queryItems
-        
-        guard let url = urlComponents.url else {
-            throw NetworkError.invalidURL
-        }
-        
-        var request = URLRequest(url: url)
-        request.httpMethod = endpoint.method.rawValue
-        request.allHTTPHeaderFields = endpoint.header
-
-        if let body = endpoint.body {
-            request.httpBody = try? JSONSerialization.data(withJSONObject: body, options: [])
-        }
-        
-        return request
-    }
-    
-    func parseResponse(data: Data) throws -> MovieDetail {
-        return try JSONDecoder().decode(MovieDetail.self, from: data)
-    }
-}
