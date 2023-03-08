@@ -8,7 +8,6 @@
 import Foundation
 import UIKit.UIImage
 
-// Declares in-memory image cache
 public protocol ImageCacheType: AnyObject {
     // Returns the image associated with a given url
     func image(for url: URL) -> UIImage?

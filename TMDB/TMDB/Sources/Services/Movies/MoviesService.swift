@@ -7,13 +7,14 @@
 
 import Foundation
 
-
-    
 final class MoviesService: MoviesServiceType {
     private let networkService: NetworkServiceType
+    private let imageLoaderService: ImageLoaderServiceType
 
-    init(networkService: NetworkServiceType = NetworkService()) {
+    init(networkService: NetworkServiceType = NetworkService(),
+         imageLoaderService: ImageLoaderServiceType = ImageLoaderService()) {
         self.networkService = networkService
+        self.imageLoaderService = imageLoaderService
     }
     
     func popular() async -> Result<Movies, NetworkError> {
