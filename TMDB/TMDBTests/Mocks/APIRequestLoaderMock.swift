@@ -8,7 +8,7 @@
 import Foundation
 @testable import TMDB
 
-class APIRequestLoaderMock: APIRequestLoaderType {
+class APIRequestLoaderMock {
     
     var loadCallsCount = 0
     

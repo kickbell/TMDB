@@ -20,6 +20,7 @@ protocol MoviesServiceType: AnyObject {
 enum NetworkError: Error, CustomStringConvertible {
     case decode
     case invalidURL
+    case invalidRequest
     case noResponse
     case unauthorized
     case unexpectedStatusCode
@@ -27,12 +28,13 @@ enum NetworkError: Error, CustomStringConvertible {
     
     var description: String {
         switch self {
-        case .decode: return ""
-        case .invalidURL: return ""
-        case .noResponse: return ""
-        case .unauthorized: return ""
-        case .unexpectedStatusCode: return ""
-        case .unknown: return ""
+        case .decode: return "decode"
+        case .invalidURL: return "invalidURL"
+        case .invalidRequest: return "invalidRequest"
+        case .noResponse: return "noResponse"
+        case .unauthorized: return "unauthorized"
+        case .unexpectedStatusCode: return "unexpectedStatusCode"
+        case .unknown: return "unknown"
         }
     }
 }
