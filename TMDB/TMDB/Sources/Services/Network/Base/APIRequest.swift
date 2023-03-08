@@ -15,7 +15,26 @@ protocol APIRequest {
     func parseResponse(data: Data) throws -> ResponseDataType
 }
 
-class APIRequestLoader<T: APIRequest> {
+protocol APIRequestLoaderType {
+//    var loadCallsCount: Int { get }
+//    var responses: [String: Any] { get }
+//    func load<T>(_ endpoint: MoviesEndpoint) -> Result<T, NetworkError>
+}
+
+//1. Mock과 서비스를 묶으려고 한다.
+//2. 프로토콜로 해서 기본구현으로 묶으려고 했다.
+//3. 근데 변수가 걸리네.
+
+protocol NetworkServiceType {
+    func load<T>(_ endpoint: MoviesEndpoint) -> Result<T, NetworkError>
+}
+
+//APIRequestLoader를 이걸로 감쌀수있으까.
+//final class NetworkService: NetworkServiceType {
+//
+//}
+
+class APIRequestLoader<T: APIRequest>: APIRequestLoaderType {
     let apiRequest: T
     let urlSession: URLSession
     
@@ -28,7 +47,7 @@ class APIRequestLoader<T: APIRequest> {
     ) async -> Result<T.ResponseDataType, NetworkError> {
         do {
             let request = try apiRequest.makeRequest(from: requestData)
-            let (data, response) = try await URLSession.shared.data(for: request, delegate: nil)
+            let (data, response) = try await urlSession.data(for: request, delegate: nil)
             guard let response = response as? HTTPURLResponse else {
                 return .failure(.noResponse)
             }

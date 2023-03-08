@@ -9,9 +9,18 @@ import Foundation
 
 
 final class MoviesService: MoviesServiceType {
-    private let moviesLoader = APIRequestLoader.init(apiRequest: MoviesRequest())
-    private let genresLoader = APIRequestLoader.init(apiRequest: GenresRequest())
-    private let movieDetailLoader = APIRequestLoader.init(apiRequest: MovieDetailRequest())
+    private let moviesLoader: APIRequestLoader<MoviesRequest>
+    private let genresLoader: APIRequestLoader<GenresRequest>
+    private let movieDetailLoader: APIRequestLoader<MovieDetailRequest>
+    
+    init(_ movies: APIRequestLoader<MoviesRequest> = .init(apiRequest: MoviesRequest()),
+         _ genres: APIRequestLoader<GenresRequest> = .init(apiRequest: GenresRequest()),
+         _ movieDetail: APIRequestLoader<MovieDetailRequest> = .init(apiRequest: MovieDetailRequest())
+    ) {
+        self.moviesLoader = movies
+        self.genresLoader = genres
+        self.movieDetailLoader = movieDetail
+    }
     
     func popular() async -> Result<Movies, NetworkError> {
         return await moviesLoader.loadAPIRequest(requestData: MoviesEndpoint.popular)

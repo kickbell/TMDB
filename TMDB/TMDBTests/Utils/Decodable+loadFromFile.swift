@@ -17,6 +17,15 @@ extension Decodable {
             fatalError("Error: \(error.localizedDescription)")
         }
     }
+    
+    static func loadDataFromFile(_ filename: String,_ type: AnyClass) -> Data {
+        do {
+            let path = Bundle(for: type).path(forResource: filename, ofType: nil)!
+            return try Data(contentsOf: URL(fileURLWithPath: path))
+        } catch {
+            fatalError("Error: \(error.localizedDescription)")
+        }
+    }
 }
 
 

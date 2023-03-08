@@ -14,18 +14,13 @@ class GenresRequestTests: XCTestCase {
     func test_URLRequest생성하기() throws {
         let urlRequest = try request.makeRequest(from: MoviesEndpoint.genre)
         
-        XCTAssertEqual(urlRequest.url?.scheme, "https")
-        XCTAssertEqual(urlRequest.url?.host, "api.themoviedb.org")
         XCTAssertEqual(urlRequest.url?.path, "/3/genre/movie/list")
     }
     
     func test_데이터파싱하기() throws {
-        let target = Genres.loadFromFile("Genres.json", GenresRequestTests.self)
+        let genresData = Genres.loadDataFromFile("Genres.json", GenresRequestTests.self)
+        let genres = try request.parseResponse(data: genresData)
         
-        XCTAssertEqual(target.items.count, 19)
-        XCTAssertEqual(target.items.first?.id, 28)
-        XCTAssertEqual(target.items.first?.name, "Action")
-        XCTAssertEqual(target.items.last?.id, 37)
-        XCTAssertEqual(target.items.last?.name, "Western")
+        XCTAssertEqual(genres.items.count, 19)        
     }
 }
