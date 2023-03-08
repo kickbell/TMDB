@@ -11,11 +11,13 @@ import XCTest
 class MovieDetailRequestTests: XCTestCase {
     private let request = MovieDetailRequest()
     private let movieId = 475557
-    
+
+    typealias mep = MoviesEndpoint
+
     func test_URLRequest생성하기() throws {
         let urlRequest = try request.makeRequest(from: MoviesEndpoint.movieDetail(id: movieId))
         
-        XCTAssertEqual(urlRequest.url?.path, "/3/movie/\(movieId)")
+        XCTAssertEqual(urlRequest.url?.path, mep.movieDetail(id: movieId).path)
     }
     
     func test_데이터파싱하기() throws {

@@ -12,22 +12,24 @@ class MoviesRequestTests: XCTestCase {
     private let request = MoviesRequest()
     private let query = ("ironman", 1)
     
+    typealias mep = MoviesEndpoint
+    
     func test_인기영화_URLRequest생성하기() throws {
         let urlRequest = try request.makeRequest(from: MoviesEndpoint.popular)
         
-        XCTAssertEqual(urlRequest.url?.path, "/3/movie/popular")
+        XCTAssertEqual(urlRequest.url?.path, mep.popular.path)
     }
     
     func test_최고평점_URLRequest생성하기() throws {
         let urlRequest = try request.makeRequest(from: MoviesEndpoint.topRated)
         
-        XCTAssertEqual(urlRequest.url?.path, "/3/movie/top_rated")
+        XCTAssertEqual(urlRequest.url?.path, mep.topRated.path)
     }
     
     func test_개봉예정_URLRequest생성하기() throws {
         let urlRequest = try request.makeRequest(from: MoviesEndpoint.upcomming)
         
-        XCTAssertEqual(urlRequest.url?.path, "/3/movie/upcoming")
+        XCTAssertEqual(urlRequest.url?.path, mep.upcomming.path)
     }
     
     func test_검색_URLRequest생성하기() throws {
@@ -40,7 +42,7 @@ class MoviesRequestTests: XCTestCase {
     func test_트렌드_URLRequest생성하기() throws {
         let urlRequest = try request.makeRequest(from: MoviesEndpoint.trending)
         
-        XCTAssertEqual(urlRequest.url?.path, "/3/trending/movie/day")
+        XCTAssertEqual(urlRequest.url?.path, mep.trending.path)
     }
     
     func test_인기영화_데이터파싱하기() throws {

@@ -11,16 +11,18 @@ import XCTest
 class GenresRequestTests: XCTestCase {
     private let request = GenresRequest()
     
+    typealias mep = MoviesEndpoint
+
     func test_URLRequest생성하기() throws {
         let urlRequest = try request.makeRequest(from: MoviesEndpoint.genre)
         
-        XCTAssertEqual(urlRequest.url?.path, "/3/genre/movie/list")
+        XCTAssertEqual(urlRequest.url?.path, mep.genre.path)
     }
     
     func test_데이터파싱하기() throws {
         let genresData = Genres.loadDataFromFile("Genres.json", GenresRequestTests.self)
         let genres = try request.parseResponse(data: genresData)
         
-        XCTAssertEqual(genres.items.count, 19)        
+        XCTAssertEqual(genres.items.count, 19)
     }
 }
