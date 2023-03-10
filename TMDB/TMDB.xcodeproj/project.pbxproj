@@ -44,6 +44,15 @@
 		A81BFF6429B0074500C9A57E /* SearchCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81BFF6329B0074500C9A57E /* SearchCoordinator.swift */; };
 		A81BFF6629B0074F00C9A57E /* TrendCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81BFF6529B0074F00C9A57E /* TrendCoordinator.swift */; };
 		A81BFF6829B0077000C9A57E /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81BFF6729B0077000C9A57E /* Coordinator.swift */; };
+		A826C41D29BAA434009F0F67 /* AccessibilityIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A826C41C29BAA434009F0F67 /* AccessibilityIdentifiers.swift */; };
+		A826C49029BAB49E009F0F67 /* libTestLib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A826C48C29BAB24B009F0F67 /* libTestLib.a */; };
+		A826C49229BAB514009F0F67 /* AppFramework.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = A826C48A29BAB24B009F0F67 /* AppFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		A826C49429BAB54B009F0F67 /* EarlGrey.swift in Sources */ = {isa = PBXBuildFile; fileRef = A826C49329BAB54B009F0F67 /* EarlGrey.swift */; };
+		A826C49729BAB860009F0F67 /* MoviesSearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A826C49629BAB860009F0F67 /* MoviesSearchTests.swift */; };
+		A826C49929BAB8C8009F0F67 /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = A826C49829BAB8C8009F0F67 /* Page.swift */; };
+		A826C49B29BAB8DB009F0F67 /* MoviesSearchPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A826C49A29BAB8DB009F0F67 /* MoviesSearchPage.swift */; };
+		A826C49D29BAB972009F0F67 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = A826C49C29BAB972009F0F67 /* main.swift */; };
+		A826C49F29BABA42009F0F67 /* FakeAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A826C49E29BABA42009F0F67 /* FakeAppDelegate.swift */; };
 		A828D8D229B266C9004464CD /* Decodable+loadFromFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828D8C129B260DF004464CD /* Decodable+loadFromFile.swift */; };
 		A828D8D429B66BD9004464CD /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828D8D329B66BD9004464CD /* APIRequest.swift */; };
 		A828D8D629B67731004464CD /* MoviesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828D8D529B67731004464CD /* MoviesRequest.swift */; };
@@ -75,7 +84,48 @@
 			remoteGlobalIDString = A8146D7F29A111B30080D108;
 			remoteInfo = TMDB;
 		};
+		A826C48529BAB24B009F0F67 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A826C47D29BAB24A009F0F67 /* EarlGrey.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = FD62395120F56A9700049E81;
+			remoteInfo = CommonLib;
+		};
+		A826C48729BAB24B009F0F67 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A826C47D29BAB24A009F0F67 /* EarlGrey.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = FDF9E03520F82D090005DCF2;
+			remoteInfo = UILib;
+		};
+		A826C48929BAB24B009F0F67 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A826C47D29BAB24A009F0F67 /* EarlGrey.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = FD623A4920F957BE00049E81;
+			remoteInfo = AppFramework;
+		};
+		A826C48B29BAB24B009F0F67 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A826C47D29BAB24A009F0F67 /* EarlGrey.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = FD5048F820FB225100261CBE;
+			remoteInfo = TestLib;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A826C49129BAB4FB009F0F67 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(TARGET_BUILD_DIR)/../../TMDB.app/Frameworks";
+			dstSubfolderSpec = 0;
+			files = (
+				A826C49229BAB514009F0F67 /* AppFramework.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		A8146D8029A111B30080D108 /* TMDB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TMDB.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -118,6 +168,15 @@
 		A81BFF6329B0074500C9A57E /* SearchCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCoordinator.swift; sourceTree = "<group>"; };
 		A81BFF6529B0074F00C9A57E /* TrendCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendCoordinator.swift; sourceTree = "<group>"; };
 		A81BFF6729B0077000C9A57E /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		A826C41C29BAA434009F0F67 /* AccessibilityIdentifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityIdentifiers.swift; sourceTree = "<group>"; };
+		A826C47D29BAB24A009F0F67 /* EarlGrey.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = EarlGrey.xcodeproj; path = EarlGrey/EarlGrey.xcodeproj; sourceTree = "<group>"; };
+		A826C49329BAB54B009F0F67 /* EarlGrey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarlGrey.swift; sourceTree = "<group>"; };
+		A826C49529BAB592009F0F67 /* EG2Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EG2Header.h; sourceTree = "<group>"; };
+		A826C49629BAB860009F0F67 /* MoviesSearchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesSearchTests.swift; sourceTree = "<group>"; };
+		A826C49829BAB8C8009F0F67 /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
+		A826C49A29BAB8DB009F0F67 /* MoviesSearchPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesSearchPage.swift; sourceTree = "<group>"; };
+		A826C49C29BAB972009F0F67 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		A826C49E29BABA42009F0F67 /* FakeAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeAppDelegate.swift; sourceTree = "<group>"; };
 		A828D8C129B260DF004464CD /* Decodable+loadFromFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Decodable+loadFromFile.swift"; sourceTree = "<group>"; };
 		A828D8D329B66BD9004464CD /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 		A828D8D529B67731004464CD /* MoviesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesRequest.swift; sourceTree = "<group>"; };
@@ -153,6 +212,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A826C49029BAB49E009F0F67 /* libTestLib.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -162,9 +222,11 @@
 		A8146D7729A111B30080D108 = {
 			isa = PBXGroup;
 			children = (
+				A826C47D29BAB24A009F0F67 /* EarlGrey.xcodeproj */,
 				A8146D8229A111B30080D108 /* TMDB */,
 				A8146D9929A111B50080D108 /* TMDBTests */,
 				A8146D8129A111B30080D108 /* Products */,
+				A826C48D29BAB266009F0F67 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -194,6 +256,9 @@
 				A828D8E229B67EA1004464CD /* Responses */,
 				A828D8F229B875AD004464CD /* Mocks */,
 				A828D8E329B67EB7004464CD /* Utils */,
+				A826C49329BAB54B009F0F67 /* EarlGrey.swift */,
+				A826C49529BAB592009F0F67 /* EG2Header.h */,
+				A826C49E29BABA42009F0F67 /* FakeAppDelegate.swift */,
 			);
 			path = TMDBTests;
 			sourceTree = "<group>";
@@ -203,6 +268,7 @@
 			children = (
 				A8146D8329A111B30080D108 /* AppDelegate.swift */,
 				A8146D8529A111B30080D108 /* SceneDelegate.swift */,
+				A826C49C29BAB972009F0F67 /* main.swift */,
 			);
 			path = AppDelegates;
 			sourceTree = "<group>";
@@ -366,6 +432,7 @@
 			isa = PBXGroup;
 			children = (
 				A8146DF529A12CD50080D108 /* UIViewController+Ext.swift */,
+				A826C41C29BAA434009F0F67 /* AccessibilityIdentifiers.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -391,6 +458,24 @@
 			path = Coordinators;
 			sourceTree = "<group>";
 		};
+		A826C47E29BAB24A009F0F67 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A826C48629BAB24B009F0F67 /* libCommonLib.a */,
+				A826C48829BAB24B009F0F67 /* libUILib.a */,
+				A826C48A29BAB24B009F0F67 /* AppFramework.framework */,
+				A826C48C29BAB24B009F0F67 /* libTestLib.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A826C48D29BAB266009F0F67 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A828D8E129B67E92004464CD /* UnitTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -398,6 +483,9 @@
 				A828D8DF29B67E5F004464CD /* GenresRequestTests.swift */,
 				A828D8DB29B677DB004464CD /* MovieDetailRequestTests.swift */,
 				A828D8F729B8C9CB004464CD /* MoviesUseCaseTests.swift */,
+				A826C49629BAB860009F0F67 /* MoviesSearchTests.swift */,
+				A826C49A29BAB8DB009F0F67 /* MoviesSearchPage.swift */,
+				A826C49829BAB8C8009F0F67 /* Page.swift */,
 			);
 			path = UnitTests;
 			sourceTree = "<group>";
@@ -461,6 +549,7 @@
 				A8146D9229A111B50080D108 /* Sources */,
 				A8146D9329A111B50080D108 /* Frameworks */,
 				A8146D9429A111B50080D108 /* Resources */,
+				A826C49129BAB4FB009F0F67 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -502,6 +591,12 @@
 			mainGroup = A8146D7729A111B30080D108;
 			productRefGroup = A8146D8129A111B30080D108 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = A826C47E29BAB24A009F0F67 /* Products */;
+					ProjectRef = A826C47D29BAB24A009F0F67 /* EarlGrey.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				A8146D7F29A111B30080D108 /* TMDB */,
@@ -509,6 +604,37 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		A826C48629BAB24B009F0F67 /* libCommonLib.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libCommonLib.a;
+			remoteRef = A826C48529BAB24B009F0F67 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A826C48829BAB24B009F0F67 /* libUILib.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libUILib.a;
+			remoteRef = A826C48729BAB24B009F0F67 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A826C48A29BAB24B009F0F67 /* AppFramework.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = AppFramework.framework;
+			remoteRef = A826C48929BAB24B009F0F67 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A826C48C29BAB24B009F0F67 /* libTestLib.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libTestLib.a;
+			remoteRef = A826C48B29BAB24B009F0F67 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		A8146D7E29A111B30080D108 /* Resources */ = {
@@ -560,6 +686,7 @@
 				A8146DF929A12D490080D108 /* Section.swift in Sources */,
 				A8146DC029A117160080D108 /* DetailMovieController.swift in Sources */,
 				A8146DD129A11CE60080D108 /* LoadingCell.swift in Sources */,
+				A826C49D29BAB972009F0F67 /* main.swift in Sources */,
 				A8146E0429A136820080D108 /* ImageLoaderService.swift in Sources */,
 				A8146DCD29A11C3F0080D108 /* SquareCell.swift in Sources */,
 				A8146DBA29A116EF0080D108 /* MovieStoreController.swift in Sources */,
@@ -567,6 +694,7 @@
 				A8146DF629A12CD50080D108 /* UIViewController+Ext.swift in Sources */,
 				A81BFF6629B0074F00C9A57E /* TrendCoordinator.swift in Sources */,
 				A828D8D629B67731004464CD /* MoviesRequest.swift in Sources */,
+				A826C41D29BAA434009F0F67 /* AccessibilityIdentifiers.swift in Sources */,
 				A8146DF229A12A810080D108 /* MoviesServiceType.swift in Sources */,
 				A81BFF6129B0072100C9A57E /* StoreCoordinator.swift in Sources */,
 				A8146DE329A127530080D108 /* HttpMethod.swift in Sources */,
@@ -589,14 +717,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A826C49729BAB860009F0F67 /* MoviesSearchTests.swift in Sources */,
 				A82FAF6229B9183E002CE49D /* NetworkServiceMock.swift in Sources */,
 				A828D8F129B875A9004464CD /* URLProtocolMock.swift in Sources */,
 				A82FAF6029B91721002CE49D /* ImageLoaderServiceMock.swift in Sources */,
 				A828D8DC29B677DB004464CD /* MovieDetailRequestTests.swift in Sources */,
 				A828D8F829B8C9CB004464CD /* MoviesUseCaseTests.swift in Sources */,
+				A826C49929BAB8C8009F0F67 /* Page.swift in Sources */,
+				A826C49B29BAB8DB009F0F67 /* MoviesSearchPage.swift in Sources */,
 				A828D8D229B266C9004464CD /* Decodable+loadFromFile.swift in Sources */,
 				A828D8DE29B67E52004464CD /* MoviesRequestTests.swift in Sources */,
+				A826C49F29BABA42009F0F67 /* FakeAppDelegate.swift in Sources */,
 				A828D8E029B67E5F004464CD /* GenresRequestTests.swift in Sources */,
+				A826C49429BAB54B009F0F67 /* EarlGrey.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -812,12 +945,15 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
 				MTL_ENABLE_DEBUG_INFO = "";
+				OTHER_LDFLAGS = "-Objc";
 				PRODUCT_BUNDLE_IDENTIFIER = dev.kickbell.TMDBTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = TMDBTests/EG2Header.h;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TMDB.app/TMDB";
+				USER_HEADER_SEARCH_PATHS = "EarlGrey/**";
 			};
 			name = Debug;
 		};
@@ -833,12 +969,15 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
 				MTL_ENABLE_DEBUG_INFO = "";
+				OTHER_LDFLAGS = "-Objc";
 				PRODUCT_BUNDLE_IDENTIFIER = dev.kickbell.TMDBTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = TMDBTests/EG2Header.h;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TMDB.app/TMDB";
+				USER_HEADER_SEARCH_PATHS = "EarlGrey/**";
 			};
 			name = Release;
 		};

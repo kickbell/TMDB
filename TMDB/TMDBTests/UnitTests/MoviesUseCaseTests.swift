@@ -321,7 +321,6 @@ class MoviesUseCaseTests: XCTestCase {
         self.waitForExpectations(timeout: 1.0, handler: nil)
     }
     
-    
     // MARK: - LoadImage
     
     func test_이미지_로딩을_성공했을때() {
@@ -332,7 +331,7 @@ class MoviesUseCaseTests: XCTestCase {
         let url = URL(string: ApiConstants.mediumImageUrl + path)!
 
         // When
-        imageLoaderService.loadImage(from: url) { result in
+        imageLoaderService.loadImage(from: url) { (result: Result<UIImage?, Never>) in
             guard case let .success(image) = result else {
                 XCTFail()
                 return
@@ -344,4 +343,6 @@ class MoviesUseCaseTests: XCTestCase {
         // Then
         self.waitForExpectations(timeout: 1.0, handler: nil)
     }
+    
+
 }

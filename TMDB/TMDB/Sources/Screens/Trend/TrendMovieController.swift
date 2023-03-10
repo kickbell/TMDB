@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TrendMovieController: UITabBarController {
+class TrendMovieController: UIViewController {
     
     // MARK: - Views
     

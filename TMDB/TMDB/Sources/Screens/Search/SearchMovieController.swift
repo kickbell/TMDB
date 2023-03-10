@@ -70,16 +70,19 @@ class SearchMovieController: UITableViewController, UISearchBarDelegate {
     
     func addAttributes() {
         view.backgroundColor = .white
+        view.accessibilityIdentifier = AccessibilityIdentifiers.MoviesSearch.rootViewId
         
         title = "검색"
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.searchController = searchController
         
         searchController.searchBar.delegate = self
+        searchController.searchBar.searchTextField.accessibilityIdentifier = AccessibilityIdentifiers.MoviesSearch.searchTextFieldId
         
         tableView.frame = view.bounds
         tableView.register(SearchCell.self, forCellReuseIdentifier: SearchCell.reuseIdentifler)
         tableView.register(LoadingCell.self, forCellReuseIdentifier: LoadingCell.reuseIdentifler)
+        tableView.accessibilityIdentifier = AccessibilityIdentifiers.MoviesSearch.tableViewId
     }
     
     // MARK: - SearchController Methods
@@ -121,6 +124,7 @@ class SearchMovieController: UITableViewController, UISearchBarDelegate {
                 return UITableViewCell()
             }
             cell.configure(with: movies[indexPath.row])
+            cell.accessibilityIdentifier = "\(AccessibilityIdentifiers.MoviesSearch.cellId).\(indexPath.row)"
             return cell
         } else {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: LoadingCell.reuseIdentifler, for: indexPath) as? LoadingCell else {
