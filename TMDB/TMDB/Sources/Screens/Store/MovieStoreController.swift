@@ -55,13 +55,13 @@ class MovieStoreController: UIViewController {
     
     private func fetchData(completion: @escaping (FetchResult) -> Void) {
         Task(priority: .background) {
-            let tapRated = await service.topRated()
+            let topRated = await service.topRated()
             let popular = await service.popular()
             let genre = await service.genre()
             let upcoming = await service.upcoming()
             
             do {
-                let t = try tapRated.get()
+                let t = try topRated.get()
                 let p = try popular.get()
                 let g = try genre.get()
                 let u = try upcoming.get()
@@ -75,10 +75,19 @@ class MovieStoreController: UIViewController {
     }
     
     func loadTableView(completion: (() -> Void)? = nil) {
-        fetchData { response in
-            self.fetchResult = response
+        #if UITESTING
+            let topRated = Movies.loadFromFile("MoviePopulor.json", type(of: self))
+            let popular = Movies.loadFromFile("MovieTopRated.json", type(of: self))
+            let genre = Genres.loadFromFile("Genres.json", type(of: self))
+            let upcoming = Movies.loadFromFile("MovieUpcoming.json", type(of: self))
+            self.fetchResult = FetchResult(topRated: topRated, popular: popular, genre: genre, upcoming: upcoming)
             completion?()
-        }
+        #else
+            fetchData { response in
+                self.fetchResult = response
+                completion?()
+            }
+        #endif
     }
     
     func addAttributes() {
@@ -91,6 +100,7 @@ class MovieStoreController: UIViewController {
         collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         collectionView.backgroundColor = .systemBackground
         collectionView.delegate = self
+        collectionView.accessibilityIdentifier = AccessibilityIdentifiers.Store.collectionView
     }
     
     func addSubviews() {
@@ -102,26 +112,30 @@ class MovieStoreController: UIViewController {
     }
     
     func createFeaturedCellRegistration() -> UICollectionView.CellRegistration<FeaturedCell, Movie> {
-        return UICollectionView.CellRegistration<FeaturedCell, Movie> { (cell, _ , movie) in
+        return UICollectionView.CellRegistration<FeaturedCell, Movie> { (cell, indexPath , movie) in
             cell.configure(with: movie)
+            cell.accessibilityIdentifier = "\(AccessibilityIdentifiers.Store.featureCell)_\(indexPath.row)"
         }
     }
     
     func createThreeTableCellRegistration() -> UICollectionView.CellRegistration<ThreeTableCell, Movie> {
-        return UICollectionView.CellRegistration<ThreeTableCell, Movie> { (cell, _ , movie) in
+        return UICollectionView.CellRegistration<ThreeTableCell, Movie> { (cell, indexPath , movie) in
             cell.configure(with: movie)
+            cell.accessibilityIdentifier = "\(AccessibilityIdentifiers.Store.threeTableCell)_\(indexPath.row)"
         }
     }
     
     func createSmallTableCellRegistration() -> UICollectionView.CellRegistration<SmallTableCell, Genre> {
-        return UICollectionView.CellRegistration<SmallTableCell, Genre> { (cell, _ , genre) in
-            cell.configure(with: genre)
+        return UICollectionView.CellRegistration<SmallTableCell, Genre> { (cell, indexPath , genre) in
+            cell.configure(with: genre, indexPath: indexPath)
+            cell.accessibilityIdentifier = "\(AccessibilityIdentifiers.Store.smallTableCell)_\(indexPath.row)"
         }
     }
     
     func createSquareCellRegistration() -> UICollectionView.CellRegistration<SquareCell, Movie> {
-        return UICollectionView.CellRegistration<SquareCell, Movie> { (cell, _ , movie) in
+        return UICollectionView.CellRegistration<SquareCell, Movie> { (cell, indexPath , movie) in
             cell.configure(with: movie)
+            cell.accessibilityIdentifier = "\(AccessibilityIdentifiers.Store.squareCell)_\(indexPath.row)"
         }
     }
     

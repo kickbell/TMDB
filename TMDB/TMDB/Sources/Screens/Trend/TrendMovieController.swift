@@ -71,6 +71,7 @@ class TrendMovieController: UIViewController {
         
         name.font = UIFont.preferredFont(forTextStyle: .title3)
         name.textColor = .label
+        name.accessibilityIdentifier = AccessibilityIdentifiers.Trend.name
         
         info.font = UIFont.preferredFont(forTextStyle: .subheadline)
         info.textColor = .label
@@ -121,17 +122,24 @@ class TrendMovieController: UIViewController {
     }
     
     func loadTableView(completion: (() -> Void)? = nil) {
-        fetchData { response in
-            switch response {
-            case .success(let trending):
-                self.trending = trending.items
-                self.configure(with: trending.items[0])
-                self.posterPath = trending.items[0].posterPath
-            case .failure(let error):
-                self.showModal(title: "Error", message: error.description)
+        #if UITESTING
+            let trending = Movies.loadFromFile("MovieTrend.json", type(of: self))
+            self.trending = trending.items
+            self.configure(with: trending.items[0])
+            self.posterPath = trending.items[0].posterPath
+        #else
+            fetchData { response in
+                switch response {
+                case .success(let trending):
+                    self.trending = trending.items
+                    self.configure(with: trending.items[0])
+                    self.posterPath = trending.items[0].posterPath
+                case .failure(let error):
+                    self.showModal(title: "Error", message: error.description)
+                }
+                completion?()
             }
-            completion?()
-        }
+        #endif
     }
     
     func configure(with movie: Movie) {

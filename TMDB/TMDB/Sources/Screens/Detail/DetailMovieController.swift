@@ -108,21 +108,27 @@ class DetailMovieController: UIViewController {
     }
     
     func loadTableView(completion: (() -> Void)? = nil) {
-        fetchData { response in
-            switch response {
-            case .success(let movieDetail):
-                self.configure(with: movieDetail)
-                self.posterPath = movieDetail.posterPath
-            case .failure(let error):
-                self.showModal(title: "Error", message: error.description)
+        #if UITESTING
+            let movieDetail = MovieDetail.loadFromFile("MovieDetails.json", type(of: self))
+            self.configure(with: movieDetail)
+            self.posterPath = movieDetail.posterPath
+        #else
+            fetchData { response in
+                switch response {
+                case .success(let movieDetail):
+                    self.configure(with: movieDetail)
+                    self.posterPath = movieDetail.posterPath
+                case .failure(let error):
+                    self.showModal(title: "Error", message: error.description)
+                }
+                completion?()
             }
-            completion?()
-        }
-        
+        #endif
     }
     
     func configure(with movie: MovieDetail) {
         name.text = movie.title
+        name.accessibilityIdentifier = AccessibilityIdentifiers.Detail.name
         tagline.text = movie.tagline
         info.text = "| ⭐️\(movie.voteAverage) | \(movie.releaseDate) | \(movie.runtime ?? 0)분 | \(movie.genres.map { $0.name }.joined(separator: ", ")) |"
         overview.text = movie.overview

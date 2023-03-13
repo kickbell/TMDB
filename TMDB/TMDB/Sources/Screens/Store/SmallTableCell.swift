@@ -36,6 +36,7 @@ class SmallTableCell: UICollectionViewCell {
     private func addAttributes() {
         name.font = UIFont.preferredFont(forTextStyle: .title3)
         name.textColor = .secondaryLabel
+        name.accessibilityIdentifier = AccessibilityIdentifiers.Store.smallTableTitle
         
         imageView.layer.cornerRadius = 5
         imageView.clipsToBounds = true
@@ -59,7 +60,7 @@ class SmallTableCell: UICollectionViewCell {
         ])
     }
         
-    func configure(with app: Genre) {
-        name.text = app.name + "  \(emojis.randomElement() ?? "")"
+    func configure(with app: Genre, indexPath: IndexPath) {
+        name.text = app.name + "  \(emojis[indexPath.row])"
     }
 }

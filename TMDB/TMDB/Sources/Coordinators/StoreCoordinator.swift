@@ -19,6 +19,7 @@ class StoreCoordinator: Coordinator {
     func start() {
         let vc = MovieStoreController(service: MoviesService())
         vc.tabBarItem = UITabBarItem(title: "스토어", image: UIImage(systemName: "cart"), selectedImage: UIImage(systemName: "cart.fill"))
+        vc.tabBarItem.accessibilityIdentifier = AccessibilityIdentifiers.Store.tabBarItem
         vc.coordinator = self
         navigationController.pushViewController(vc, animated: true)
     }

@@ -10,7 +10,19 @@ import Foundation
 final class NetworkService: NetworkServiceType {
     private let session: URLSession
 
-    init(session: URLSession = URLSession.shared) {
+    
+    
+//#if UITESTING
+//let config = URLSessionConfiguration.default
+//#else
+//let config = URLSessionConfiguration.ephemeral
+//#endif
+//let session = URLSession(configuration: config)
+//        return session
+    
+    
+    
+    init(session: URLSession = URLSession(configuration: URLSessionConfiguration.default)) {
         self.session = session
     }
 

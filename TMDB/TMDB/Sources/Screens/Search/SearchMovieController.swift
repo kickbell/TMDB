@@ -12,9 +12,16 @@ class SearchMovieController: UITableViewController, UISearchBarDelegate {
     
     private let searchController = UISearchController(searchResultsController: nil)
     
+ 
     // MARK: Properties
     weak var coordinator: SearchCoordinator?
+    
+    #if UITESTING
+    private(set) var movies: [Movie] = [Movie.dummy]
+    #else
     private(set) var movies: [Movie] = []
+    #endif
+    
     private let service: MoviesServiceType
     private var isPaging = false
     private var currentPage = 1
@@ -70,19 +77,18 @@ class SearchMovieController: UITableViewController, UISearchBarDelegate {
     
     func addAttributes() {
         view.backgroundColor = .white
-        view.accessibilityIdentifier = AccessibilityIdentifiers.MoviesSearch.rootViewId
         
         title = "검색"
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.searchController = searchController
         
         searchController.searchBar.delegate = self
-        searchController.searchBar.searchTextField.accessibilityIdentifier = AccessibilityIdentifiers.MoviesSearch.searchTextFieldId
+        searchController.searchBar.searchTextField.accessibilityIdentifier = AccessibilityIdentifiers.Search.searchTextField
         
         tableView.frame = view.bounds
         tableView.register(SearchCell.self, forCellReuseIdentifier: SearchCell.reuseIdentifler)
         tableView.register(LoadingCell.self, forCellReuseIdentifier: LoadingCell.reuseIdentifler)
-        tableView.accessibilityIdentifier = AccessibilityIdentifiers.MoviesSearch.tableViewId
+        tableView.accessibilityIdentifier = AccessibilityIdentifiers.Search.tableView
     }
     
     // MARK: - SearchController Methods
@@ -124,7 +130,7 @@ class SearchMovieController: UITableViewController, UISearchBarDelegate {
                 return UITableViewCell()
             }
             cell.configure(with: movies[indexPath.row])
-            cell.accessibilityIdentifier = "\(AccessibilityIdentifiers.MoviesSearch.cellId).\(indexPath.row)"
+            cell.accessibilityIdentifier = "\(AccessibilityIdentifiers.Search.searchCell)_\(indexPath.row)"
             return cell
         } else {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: LoadingCell.reuseIdentifler, for: indexPath) as? LoadingCell else {

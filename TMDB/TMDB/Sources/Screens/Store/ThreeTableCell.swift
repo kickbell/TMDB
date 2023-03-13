@@ -41,6 +41,7 @@ class ThreeTableCell: UICollectionViewCell {
     private func addAttributes() {
         name.font = UIFont.preferredFont(forTextStyle: .headline)
         name.textColor = .label
+        name.accessibilityIdentifier = AccessibilityIdentifiers.Store.threeTableTitle
         
         subtitle.font = UIFont.preferredFont(forTextStyle: .subheadline)
         subtitle.textColor = .secondaryLabel

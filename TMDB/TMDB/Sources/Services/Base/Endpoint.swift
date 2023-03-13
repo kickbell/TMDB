@@ -19,10 +19,18 @@ protocol Endpoint {
 
 extension Endpoint {
     var scheme: String {
+    #if UITESTING
+        return "http"
+    #else
         return "https"
+    #endif
     }
-
+    
     var host: String {
+    #if UITESTING
+        return "localhost:8080"
+    #else
         return "api.themoviedb.org"
+    #endif
     }
 }

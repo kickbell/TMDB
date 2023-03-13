@@ -48,6 +48,7 @@ class SearchCell: UITableViewCell{
         
         title.font = UIFont.preferredFont(forTextStyle: .title2)
         title.textColor = .label
+        title.accessibilityIdentifier = AccessibilityIdentifiers.Search.title
         
         overview.font = UIFont.preferredFont(forTextStyle: .body)
         overview.textAlignment = .justified

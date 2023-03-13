@@ -19,6 +19,7 @@ class TrendCoordinator: Coordinator {
     func start() {
         let vc = TrendMovieController(service: MoviesService())
         vc.tabBarItem = UITabBarItem(title: "트렌드", image: UIImage(systemName: "t.circle"), selectedImage: nil)
+        vc.tabBarItem.accessibilityIdentifier = AccessibilityIdentifiers.Trend.tabBarItem
         vc.coordinator = self
         navigationController.pushViewController(vc, animated: true)
     }

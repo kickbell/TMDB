@@ -41,3 +41,6 @@ extension Movie: Decodable {
     }
 }
 
+extension Movie {
+    static let dummy = Movie(backdropPath: nil, posterPath: nil, id: 900901, overview: "'Ironman Arafat', ran 1004 kilometers from Teknaf to Tetulia in 20 days, swam the Bengali Channel 6 times, completed the world's toughest one-day Ironman Triathlon Challenge three times, and became the first Bangladeshi to win the 'Ironman 70.3 World Championship'.", releaseDate: "2021-11-21", title: "Ironman", voteAverage: 0, voteCount: 0)
+}

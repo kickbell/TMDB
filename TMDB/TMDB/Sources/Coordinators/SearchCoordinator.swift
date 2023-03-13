@@ -19,6 +19,7 @@ class SearchCoordinator: Coordinator {
     func start() {
         let vc = SearchMovieController(service: MoviesService())
         vc.tabBarItem = UITabBarItem(title: "검색", image: UIImage(systemName: "magnifyingglass"), selectedImage: nil)
+        vc.tabBarItem.accessibilityIdentifier = AccessibilityIdentifiers.Search.tabBarItem
         vc.coordinator = self
         navigationController.pushViewController(vc, animated: true)
     }

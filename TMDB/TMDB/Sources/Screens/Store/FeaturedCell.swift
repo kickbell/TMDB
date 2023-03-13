@@ -47,6 +47,7 @@ class FeaturedCell: UICollectionViewCell {
         
         name.font = UIFont.preferredFont(forTextStyle: .title2)
         name.textColor = .label
+        name.accessibilityIdentifier = AccessibilityIdentifiers.Store.featureTitle
         
         subtitle.font = UIFont.preferredFont(forTextStyle: .body)
         subtitle.numberOfLines = 1

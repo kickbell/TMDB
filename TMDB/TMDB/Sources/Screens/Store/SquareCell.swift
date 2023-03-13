@@ -43,6 +43,7 @@ class SquareCell: UICollectionViewCell {
         
         name.font = UIFont.preferredFont(forTextStyle: .subheadline)
         name.textColor = .label
+        name.accessibilityIdentifier = AccessibilityIdentifiers.Store.squareTitle
         
         subtitle.font = UIFont.preferredFont(forTextStyle: .body)
         subtitle.textColor = .secondaryLabel
